@@ -5,12 +5,16 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
-  context: path.resolve(__dirname, './src'),
+  context: path.resolve(__dirname, '../src'),
   entry: ['./main.jsx'],
   output: {
     path: path.join(__dirname, 'www'),
     filename: '[name].[hash].js',
     publicPath: '/',
+  },
+  devtool: 'inline-source-map',
+  devServer: {
+    contentBase: './www'
   },
   module: {
     rules: [
@@ -63,17 +67,10 @@ module.exports = {
     ],
   },
   plugins: [
-    new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
-      compress: {
-        warnings: false,
-      },
-    }),
     new HtmlWebpackPlugin({
       title: 'webpack-starter',
       template: '../public/index.html',
     }),
-    new CleanWebpackPlugin('www'),
-    new webpack.DefinePlugin({ 'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'production') }),
+    new webpack.DefinePlugin({ 'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development') }),
   ],
 };
