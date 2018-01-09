@@ -18,4 +18,6 @@ import s from './css.css';
 
 console.log(m);
 
-ReactDOM.render(<h1 className={s.color}>Hello, world!</h1>, document.getElementById('container'));
+import Home from './view/home';
+
+ReactDOM.render(<Home />, document.getElementById('container'));

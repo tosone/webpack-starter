@@ -41,6 +41,7 @@
     "lodash": "^4.17.4",
     "markdown-loader": "^2.0.2",
     "popper.js": "^1.12.9",
+    "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.6",

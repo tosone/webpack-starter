@@ -16,6 +16,9 @@ module.exports = {
   devServer: {
     contentBase: './www'
   },
+  resolve: {
+    extensions: [".js", ".jsx"]
+  },
   module: {
     rules: [
       {
