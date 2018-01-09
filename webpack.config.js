@@ -35,6 +35,31 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.scss$/,
+        use: [
+          {
+            loader: 'style-loader',
+          },
+          {
+            loader: 'css-loader',
+          },
+          {
+            loader: 'sass-loader',
+          },
+        ],
+      },
+      {
+        test: /\.md$/,
+        use: [
+          {
+            loader: 'html-loader',
+          },
+          {
+            loader: 'markdown-loader',
+          },
+        ],
+      },
     ],
   },
   plugins: [
@@ -46,7 +71,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       title: 'webpack-starter',
-      template: '../index.html',
+      template: '../public/index.html',
     }),
     new CleanWebpackPlugin('www'),
     new webpack.DefinePlugin({ 'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'production') }),

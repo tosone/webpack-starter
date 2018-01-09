@@ -7,6 +7,15 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import { Router } from 'react-router-dom';
 
-import s from './main.css';
+import $ from 'jquery';
+import popper from 'popper.js';
+import bootstrap from 'bootstrap';
+
+import './style.scss';
+
+import m from './readme.md';
+import s from './css.css';
+
+console.log(m);
 
 ReactDOM.render(<h1 className={s.color}>Hello, world!</h1>, document.getElementById('container'));
