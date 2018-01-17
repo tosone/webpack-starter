@@ -12,6 +12,9 @@ module.exports = {
     filename: '[name].[hash].js',
     publicPath: '/',
   },
+  resolve: {
+    extensions: [".js", ".jsx"]
+  },
   module: {
     rules: [
       {
@@ -63,12 +66,7 @@ module.exports = {
     ],
   },
   plugins: [
-    new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
-      compress: {
-        warnings: false,
-      },
-    }),
+    new webpack.optimize.UglifyJsPlugin(),
     new HtmlWebpackPlugin({
       title: 'webpack-starter',
       template: '../public/index.html',

@@ -14,7 +14,8 @@ module.exports = {
   },
   devtool: 'inline-source-map',
   devServer: {
-    contentBase: './www'
+    contentBase: './www',
+    historyApiFallback: true,
   },
   resolve: {
     extensions: [".js", ".jsx"]
